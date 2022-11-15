@@ -40,6 +40,7 @@ def number_text(n):
     """Document"""
     return ("{} is a number".format(n))
 
+
 @app.route("/number_template/<int:n>")
 def number_template(n):
     """Document"""
