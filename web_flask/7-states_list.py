@@ -67,6 +67,12 @@ def states_list():
     return render_template('7-states_list.html', sorted_states=sorted_states)
 
 
+@app.teardown_appcontext
+def app_teardown():
+    """Document"""
+    storage.close()
+
+
 if __name__ == "__main__":
     """Document"""
     app.run(host="0.0.0.0", port="5000")
