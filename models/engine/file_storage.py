@@ -64,3 +64,7 @@ class FileStorage:
         for key, val in dict(FileStorage.__objects).items():
             if val == obj:
                 del FileStorage.__objects[key]
+
+    def close(self):
+        """Doc"""
+        self.reload()
