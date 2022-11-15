@@ -71,5 +71,6 @@ class DBStorage:
             sessionmaker(bind=self.__engine, expire_on_commit=False))
 
     def close(self):
-        """Doc"""
-        self.__session.remove()
+        """Calls remove() on self.__session"""
+        if self.__session:
+            self.__session.remove()

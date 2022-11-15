@@ -19,7 +19,7 @@ class State(BaseModel, Base):
                               backref='state'
                               )
 
-    elif storageType == 'file':
+    else:
         @property
         def cities(self):
             """ returns list of City instances with matching state ids"""

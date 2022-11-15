@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines a class to manage file storage for hbnb clone"""
 import json
+from os import getenv
 
 
 class FileStorage:
@@ -22,6 +23,8 @@ class FileStorage:
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
+        if obj.__dict__.get('_sa_instance_state'):
+            del obj.__dict__['_sa_instance_state']
         self.all().update({obj.to_dict()['__class__'] + '.' + obj.id: obj})
 
     def save(self):
@@ -66,5 +69,5 @@ class FileStorage:
                 del FileStorage.__objects[key]
 
     def close(self):
-        """Doc"""
+        """Calls reload"""
         self.reload()
