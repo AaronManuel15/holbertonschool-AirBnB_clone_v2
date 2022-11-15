@@ -52,7 +52,7 @@ def number_odd_or_even(n):
     """Document"""
     if n % 2 == 0:
         EorO = "even"
-    else: 
+    else:
         EorO = "odd"
     return render_template('6-number_odd_or_even.html', n=n, EorO=EorO)
 
