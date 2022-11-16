@@ -43,14 +43,14 @@ class DBStorage:
             for obj in self.__session.query(cls).all():
                 name_id = "{}.{}".format(type(cls).__name__, obj.id)
                 obj_dict.update({"{}".format(name_id): obj})
-                #obj_dict.update({f'{type(cls).__name__}.{obj.id}': obj})
+                # obj_dict.update({f'{type(cls).__name__}.{obj.id}': obj})
         else:
             for class_name in all_classes.values():
                 obj_list = self.__session.query(class_name)
                 for obj in obj_list:
                     name_id = "{}.{}".format(type(cls).__name__, obj.id)
                     obj_dict.update({"{}".format(name_id): obj})
-                    #obj_dict.update({f'{type(obj).__name__}.{obj.id}': obj})
+                    # obj_dict.update({f'{type(obj).__name__}.{obj.id}': obj})
         return obj_dict
 
     def new(self, obj):
