@@ -3,12 +3,12 @@
 	<head>
 		<title>AirBnB clone</title>
 
-		<link rel="shortcut icon" href="images/icon.ico" >
+		<link rel="shortcut icon" href="../static/images/icon.png" >
 
-		<link rel="stylesheet" href="styles/4-common.css"/>
-		<link rel="stylesheet" href="styles/3-header.css"/>
-		<link rel="stylesheet" href="styles/3-footer.css"/>
-		<link rel="stylesheet" href="styles/6-filters.css"/>
+		<link rel="stylesheet" href="../static/styles/4-common.css"/>
+		<link rel="stylesheet" href="../static/styles/3-header.css"/>
+		<link rel="stylesheet" href="../static/styles/3-footer.css"/>
+		<link rel="stylesheet" href="../static/styles/6-filters.css"/>
 	</head>
     <body>
 		<header>
@@ -22,13 +22,13 @@
 					<h4>&nbsp;</h4>
 					<ul class="popover">
 					{% for state in states.values() | sort(attribute="name") %}
-						<li><h2>{{ state.name }}</h2>
+						<LI><H2>{{ state.name }}</H2>
 							{% for city in states.cities | sort(attribute="name") %}
-							<ul>
-								<li><h4>{{ city.name }}</h4></li>
-							</ul>
+							<UL>
+								<H4>{{ city.name }}</H4>
+							</UL>
 							{% endfor %}
-						</li>
+						</LI>
 					{% endfor %}
 					</ul>
 				</div>
@@ -37,7 +37,7 @@
 					<h4>&nbsp;</h4>
 					<ul class="popover">
 					{% for amenity in amenityList.values() | sort(attribute="name") %}
-						<li><h4>{{ amenity.name }}</h4></li>
+						<UL><H4>{{ amenity.name }}</H4></UL>
 					{% endfor %}
 					</ul>
 				</div>
